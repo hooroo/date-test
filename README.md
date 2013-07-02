@@ -3,7 +3,7 @@ Date Test
 
 This is a date-parsing code test we send to some of our candidates. 
 
-If you are interested in creating a solution to familiarise yourself with the problem, **please do so on a branch, e.g:**.
+If you are interested in creating a solution to familiarise yourself with the problem, **please do so on a branch, e.g:**
 
 ```
 stuliston_ruby
