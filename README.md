@@ -26,7 +26,7 @@ date-diff: Determine the number of days difference between two dates
 Usage: date-diff '<earlier_date>, <later_date>'
 
 Example:
-  date-diff '1 1 2013' '1 2 2013'
+  date-diff '1 1 2013, 1 2 2013'
 
 Options:
     -?, --help                       Show this message
