@@ -1,45 +1,54 @@
-Date Test
-=========
+# DateDiff
 
-This is a date-parsing code test we send to some of our candidates. 
+Compute the number of days difference between two dates
 
-If you are interested in creating a solution to familiarise yourself with the problem, **please do so on a branch, e.g:**
+## Installation
 
+Add this line to your application's Gemfile:
+
+    gem 'date_diff'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install date_diff
+
+## Usage
+
+### Help
+
+```bash
+$ date-diff --help
+date-diff: Determine the number of days difference between two dates
+Usage: date-diff '<earlier_date>, <later_date>'
+
+Example:
+  date-diff '1 1 2013' '1 2 2013'
+
+Options:
+    -?, --help                       Show this message
+    -v, --version                    Show version
 ```
-stuliston_ruby
-ashcambrell_java
-cirode_python
+
+### Examples
+
+```bash
+$ date-diff '1 1 2013, 1 3 2013'
+1 1 2013, 1 3 2013, 59
 ```
 
-The Challenge
--------------
+```bash
+$ date-diff '1 1 2012, 1 3 2012'
+1 1 2012, 1 3 2012, 60
+```
 
-Create an application that can read in pairs of dates in the following
-format -
+## Contributing
 
-    DD MM YYYY, DD MM YYYY
-
-Validate the input data, and compute the difference between the two dates
-in days.
-
-Output of the application should be of the form -
-
-    DD MM YYYY, DD MM YYYY, difference
-
-Where the first date is the earliest, the second date is the latest and the difference is the number of days.
-
-Input can be from a file, or from standard input, as the developer chooses.
-
-Provide test data to exercise the application.
-
-Constraints:
-
-The application may not make use of the libraries for date manipulation
-(for example Date, Calendar classes).
-
-The application can limit calculation on an input range of dates from 1900 to 2010
-
-
-Deliverables:
-
-The source files, the test data and any test code.
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request

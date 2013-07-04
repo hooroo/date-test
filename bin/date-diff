@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+current_dir = File.expand_path(File.join('..', '..'), __FILE__)
+lib_dir = File.join(current_dir, 'lib')
+$LOAD_PATH.unshift lib_dir
+
+require 'optparse'
+require 'date_diff'
+
+opts = OptionParser.new do |opts|
+  opts.banner = 'date-diff: Determine the number of days difference between two dates'
+
+  opts.define_head "Usage: date-diff '<earlier_date>, <later_date>'"
+
+  opts.separator ''
+  opts.separator 'Example:'
+  opts.separator "  date-diff '1 1 2013, 1 2 2013'"
+  opts.separator ''
+  opts.separator 'Options:'
+
+  opts.on_tail '-?', '--help', 'Show this message' do
+    puts opts
+    exit
+  end
+
+  opts.on_tail '-v', '--version', 'Show version' do
+    puts DateDiff::VERSION
+    exit
+  end
+end
+
+opts.parse!
+
+earlier_date, later_date = ARGV.shift.split(/,\s*/)
+
+if earlier_date && later_date
+  date_diff = DateDiff::Dates.new(earlier_date, later_date)
+  puts "#{earlier_date}, #{later_date}, #{date_diff.days_between}"
+else
+  puts opts
+  exit 1
+end
