@@ -4,6 +4,7 @@ module DateDiff
   class Year
 
     DAYS_IN_YEAR = 365
+    DAYS_IN_LEAP_YEAR = 366
 
     def initialize year
       @raw_year = year
@@ -21,7 +22,7 @@ module DateDiff
     end
 
     def days_in_year
-      leap_year? ? 366 : 365
+      leap_year? ? DAYS_IN_LEAP_YEAR : DAYS_IN_YEAR
     end
 
     private
