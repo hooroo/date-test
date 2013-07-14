@@ -2,14 +2,6 @@ require 'date_challenge/month'
 
 module DateChallenge
 
-  describe UserInput do
-
-    describe '#dates' do
-      it ''
-    end
-
-  end
-
   describe Month do
 
     describe '#number_of_days' do

@@ -1,4 +1,5 @@
 require 'date_challenge/date_range'
+require 'date_challenge/date'
 
 module DateChallenge
   describe DateRange do
@@ -6,9 +7,15 @@ module DateChallenge
     describe '#to_s' do
 
       it 'outputs in the form DD MM YYYY, DD MM YYYY, difference' do
-        start_date = double(to_i: 0,  to_s: '07 02 2013')
-        end_date   = double(to_i: 10, to_s: '20 01 2014')
-        DateRange.new(start_date, end_date).to_s.should == '07 02 2013, 20 01 2014, 10'
+        start_date = Date.new(2013, 1, 1)
+        end_date   = Date.new(2013, 1, 10)
+        DateRange.new(start_date, end_date).to_s.should == '01 01 2013, 10 01 2013, 9'
+      end
+
+      it 'displays the earliest date first' do
+        start_date = Date.new(2013, 1, 10)
+        end_date   = Date.new(2013, 1, 1)
+        DateRange.new(start_date, end_date).to_s.should == '01 01 2013, 10 01 2013, 9'
       end
 
     end

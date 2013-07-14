@@ -1,4 +1,5 @@
 require 'date_challenge/user_input'
+require 'date_challenge/date'
 
 module DateChallenge
   describe UserInput do
